@@ -1,0 +1,140 @@
+/* frontend/src/Sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #343a40; /* Dark background color, similar to original */
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-out;
+    z-index: 50; /* Ensure it's above other content but below chatbot toggle */
+    font-family: "Inter", sans-serif; /* Consistent font */
+}
+
+.sidebar.open {
+    left: 0; /* Slide in when open */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #212529; /* Slightly darker header */
+    border-bottom: 1px solid #495057;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close-sidebar-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.close-sidebar-button:hover {
+    transform: rotate(90deg);
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav-item {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #495057;
+    transition: background-color 0.2s ease;
+    font-size: 1rem;
+}
+
+.sidebar-nav-item:hover {
+    background-color: #495057; /* Highlight on hover */
+}
+
+.sidebar-user-info {
+    padding: 1rem;
+    background-color: #444a50; /* Slightly different background for user info */
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #495057;
+}
+
+.user-icon {
+    font-size: 1.2rem;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+.sidebar-logout-button,
+.sidebar-login-button,
+.sidebar-register-button {
+    width: calc(100% - 2rem); /* Full width minus padding */
+    padding: 0.7rem 1rem;
+    margin: 1rem 1rem 0.5rem 1rem; /* Adjust margins */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    color: white; /* White text for all buttons */
+}
+
+.sidebar-logout-button {
+    background-color: #dc3545; /* Red for logout */
+}
+
+.sidebar-logout-button:hover {
+    background-color: #c82333;
+}
+
+.sidebar-login-button {
+    background-color: #007bff; /* Blue for login */
+}
+
+.sidebar-login-button:hover {
+    background-color: #0056b3;
+}
+
+.sidebar-register-button {
+    background-color: #28a745; /* Green for register */
+}
+
+.sidebar-register-button:hover {
+    background-color: #218838;
+}
+
+.sidebar-nav-item.logout-item {
+    padding: 0; /* Remove default padding for this specific item */
+    border-bottom: none; /* Remove bottom border if desired */
+}
+
+/* Styling for the "Please log in" message */
+.sidebar-nav-item p {
+    color: #bbb; /* Lighter color for text */
+    padding: 1rem; /* Add padding to the paragraph itself */
+    margin: 0; /* Remove default paragraph margin */
+}
+
+
+
+
+

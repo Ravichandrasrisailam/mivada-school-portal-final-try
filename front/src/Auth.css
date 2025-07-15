@@ -1,0 +1,105 @@
+/* frontend/src/Auth.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f8f8; /* Light background to match overall site */
+    font-family: "Inter", sans-serif; /* Consistent font */
+}
+
+.auth-form {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.75rem; /* Consistent border-radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+}
+
+.auth-form h2 {
+    font-size: 2rem; /* Adjusted font size */
+    font-weight: bold;
+    color: #1f2937; /* Dark color */
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db; /* Lighter border */
+    border-radius: 0.5rem; /* Consistent border-radius */
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #2563eb; /* Blue focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #2563eb; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 0.5rem; /* Consistent border-radius */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button:hover:not(:disabled) {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.auth-button:disabled {
+    background-color: #93c5fd; /* Lighter blue when disabled */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.error-message {
+    color: #ef4444; /* Red error message */
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.auth-switch-link {
+    margin-top: 1rem;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+.auth-switch-link span {
+    color: #2563eb; /* Blue link */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-switch-link span:hover {
+    text-decoration: underline;
+}
+

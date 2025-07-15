@@ -1,0 +1,24 @@
+/* Global styles */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    font-family: "Inter", sans-serif; /* Recommended font */
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* THIS IS THE KEY FIX: Prevents horizontal scroll/whitespace */
+}
+
+/* Basic reset for elements */
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Explicitly remove outlines for all focusable elements */
+*:focus {
+    outline: none !important; /* Use !important to override browser defaults if necessary */
+}

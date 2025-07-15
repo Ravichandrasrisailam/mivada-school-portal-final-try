@@ -1,0 +1,483 @@
+/* frontend/src/LandingPage.css */
+
+/* General Layout */
+.landing-page {
+    min-height: 100vh;
+    background-color: #f3f4f6; /* Equivalent to Tailwind's bg-gray-100 */
+    font-family: "Inter", sans-serif; /* Recommended font */
+    color: #374151; /* Equivalent to Tailwind's text-gray-800 */
+    transition: transform 0.3s ease-out; /* For potential content shifting */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Equivalent to Tailwind's shadow-md */
+    padding: 1rem 1.5rem; /* Equivalent to Tailwind's py-4 px-6 */
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: flex-start; /* Align items to the start initially */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 40; /* Lower than sidebar and its toggle button */
+}
+
+/* Hamburger button inside navbar */
+.navbar .sidebar-toggle-button {
+    position: static; /* Ensure no fixed positioning */
+    margin-right: 1rem; /* Space between hamburger and brand */
+    /* Styles for the hamburger icon itself (color, size, etc.) */
+    background-color: #2563eb; /* Blue background */
+    border: none;
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 0.75rem; /* Padding for the button */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .sidebar-toggle-button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.navbar .sidebar-toggle-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5);
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Equivalent to Tailwind's text-xl */
+    font-weight: bold; /* Equivalent to Tailwind's font-bold */
+    color: #1f2937; /* Equivalent to Tailwind's text-gray-900 */
+    margin-right: auto; /* Pushes nav items to the right */
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 1.5rem; /* Equivalent to Tailwind's space-x-6 */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+    font-weight: 500; /* Equivalent to Tailwind's font-medium */
+    transition: color 0.3s ease; /* Equivalent to Tailwind's transition-colors duration-300 */
+}
+
+.nav-link:hover {
+    color: #2563eb; /* Equivalent to Tailwind's hover:text-blue-600 */
+}
+
+.nav-button {
+    background-color: #2563eb; /* Equivalent to Tailwind's bg-blue-600 */
+    color: white; /* Equivalent to Tailwind's text-white */
+    padding: 0.5rem 1rem; /* Equivalent to Tailwind's px-4 py-2 */
+    border: none;
+    border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+    cursor: pointer;
+    font-size: 0.9rem; /* Equivalent to Tailwind's text-sm */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Equivalent to Tailwind's transition-all duration-300 */
+}
+
+.nav-button:hover {
+    background-color: #1d4ed8; /* Equivalent to Tailwind's hover:bg-blue-700 */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.nav-button.register-button {
+    background-color: #10b981; /* Equivalent to Tailwind's bg-green-500 */
+}
+
+.nav-button.register-button:hover {
+    background-color: #059669; /* Equivalent to Tailwind's hover:bg-green-600 */
+}
+
+.nav-button.logout-button {
+    background-color: #ef4444; /* Equivalent to Tailwind's bg-red-500 */
+}
+
+.nav-button.logout-button:hover {
+    background-color: #dc2626; /* Equivalent to Tailwind's hover:bg-red-600 */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+    font-weight: 500; /* Equivalent to Tailwind's font-medium */
+    margin-right: 1rem; /* Space before logout button */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 600px; /* Fixed height for hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Ensure image doesn't overflow */
+    margin-top: 64px; /* Adjust for fixed navbar height (approx 4rem) */
+    background-size: cover; /* Ensure image covers the section */
+    background-position: center; /* Center the image */
+    filter: brightness(70%); /* Slightly dim the image for text readability */
+}
+
+.hero-content {
+    z-index: 1; /* Ensure content is above background */
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Large font size */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-button {
+    background-color: #2563eb; /* Equivalent to Tailwind's bg-blue-600 */
+    color: white; /* Equivalent to Tailwind's text-white */
+    padding: 1rem 2rem; /* Equivalent to Tailwind's px-8 py-4 */
+    border: none;
+    border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+    font-size: 1.25rem; /* Equivalent to Tailwind's text-xl */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Equivalent to Tailwind's transition-all duration-300 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to Tailwind's shadow-md */
+}
+
+.hero-button:hover {
+    background-color: #1d4ed8; /* Equivalent to Tailwind's hover:bg-blue-700 */
+    transform: translateY(-3px); /* Equivalent to Tailwind's hover:-translate-y-1 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+/* Section Styling (General) */
+section {
+    padding: 4rem 2rem; /* Equivalent to Tailwind's py-16 px-8 */
+    text-align: center;
+    margin-bottom: 2rem; /* Equivalent to Tailwind's mb-8 */
+}
+
+section h2 {
+    font-size: 2.5rem; /* Equivalent to Tailwind's text-4xl */
+    color: #1f2937; /* Equivalent to Tailwind's text-gray-900 */
+    margin-bottom: 2.5rem; /* Equivalent to Tailwind's mb-10 */
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px; /* Equivalent to Tailwind's w-20 */
+    height: 4px; /* Equivalent to Tailwind's h-1 */
+    background-color: #2563eb; /* Equivalent to Tailwind's bg-blue-600 */
+    border-radius: 2px; /* Equivalent to Tailwind's rounded-full */
+}
+
+/* About Section */
+.about-section {
+    background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.about-content {
+    max-width: 900px; /* Equivalent to Tailwind's max-w-3xl */
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    line-height: 1.75; /* Equivalent to Tailwind's leading-relaxed */
+    margin-bottom: 2rem; /* Equivalent to Tailwind's mb-8 */
+}
+
+.about-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem; /* Equivalent to Tailwind's gap-8 */
+}
+
+.feature-item {
+    flex-basis: calc(33% - 2rem); /* Approx Tailwind's w-1/3 with gap */
+    background-color: #f9fafb; /* Equivalent to Tailwind's bg-gray-50 */
+    padding: 1.5rem; /* Equivalent to Tailwind's p-6 */
+    border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    text-align: left;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem; /* Equivalent to Tailwind's text-xl */
+    color: #2563eb; /* Equivalent to Tailwind's text-blue-600 */
+    margin-bottom: 0.75rem; /* Equivalent to Tailwind's mb-3 */
+}
+
+.feature-item p {
+    font-size: 1rem; /* Equivalent to Tailwind's text-base */
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+    line-height: 1.6; /* Equivalent to Tailwind's leading-relaxed */
+}
+
+/* Academics Section */
+.academics-section {
+    background-color: #e0f2fe; /* Equivalent to Tailwind's bg-blue-50 */
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Equivalent to Tailwind's gap-8 */
+    max-width: 1000px; /* Equivalent to Tailwind's max-w-4xl */
+    margin: 0 auto;
+}
+
+.program-card {
+    background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+    padding: 2rem; /* Equivalent to Tailwind's p-8 */
+    border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-xl */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+}
+
+.program-card h3 {
+    font-size: 1.75rem; /* Equivalent to Tailwind's text-2xl */
+    color: #1f2937; /* Equivalent to Tailwind's text-gray-900 */
+    margin-bottom: 0.75rem; /* Equivalent to Tailwind's mb-3 */
+}
+
+.program-card p {
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+    line-height: 1.6; /* Equivalent to Tailwind's leading-relaxed */
+}
+
+/* Admissions Section */
+.admissions-section {
+    background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.admissions-content {
+    max-width: 800px; /* Equivalent to Tailwind's max-w-3xl */
+    margin: 0 auto;
+}
+
+.admissions-content p {
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    line-height: 1.75; /* Equivalent to Tailwind's leading-relaxed */
+    margin-bottom: 1.5rem; /* Equivalent to Tailwind's mb-6 */
+}
+
+.admissions-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem; /* Equivalent to Tailwind's mb-8 */
+    text-align: left;
+}
+
+.admissions-list li {
+    font-size: 1rem; /* Equivalent to Tailwind's text-base */
+    margin-bottom: 0.75rem; /* Equivalent to Tailwind's mb-3 */
+    position: relative;
+    padding-left: 1.75rem; /* Space for checkmark */
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+}
+
+.admissions-list li::before {
+    content: '✓'; /* Checkmark icon */
+    color: #10b981; /* Equivalent to Tailwind's text-green-500 */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.25rem; /* Larger checkmark */
+}
+
+.admissions-button {
+    background-color: #10b981; /* Equivalent to Tailwind's bg-green-500 */
+    color: white; /* Equivalent to Tailwind's text-white */
+    padding: 0.875rem 2rem; /* Equivalent to Tailwind's px-8 py-3.5 */
+    border: none;
+    border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admissions-button:hover {
+    background-color: #059669; /* Equivalent to Tailwind's hover:bg-green-600 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Alumni Testimonials Section */
+.alumni-section {
+    background-color: #f3f4f6; /* Equivalent to Tailwind's bg-gray-100 */
+}
+
+.alumni-testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem; /* Equivalent to Tailwind's gap-10 */
+    max-width: 1200px; /* Equivalent to Tailwind's max-w-5xl */
+    margin: 0 auto;
+}
+
+.alumni-card {
+    background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+    padding: 2rem; /* Equivalent to Tailwind's p-8 */
+    border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-xl */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    flex-basis: calc(33% - 2.5rem); /* Three cards per row with gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.alumni-img {
+    width: 100px; /* Equivalent to Tailwind's w-24 */
+    height: 100px; /* Equivalent to Tailwind's h-24 */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem; /* Equivalent to Tailwind's mb-6 */
+    border: 4px solid #2563eb; /* Equivalent to Tailwind's border-4 border-blue-600 */
+}
+
+.alumni-name {
+    font-size: 1.375rem; /* Equivalent to Tailwind's text-xl */
+    font-weight: bold; /* Equivalent to Tailwind's font-bold */
+    color: #1f2937; /* Equivalent to Tailwind's text-gray-900 */
+    margin-bottom: 0.5rem; /* Equivalent to Tailwind's mb-2 */
+}
+
+.alumni-title {
+    font-size: 0.9rem; /* Equivalent to Tailwind's text-sm */
+    color: #6b7280; /* Equivalent to Tailwind's text-gray-500 */
+    margin-bottom: 1.5rem; /* Equivalent to Tailwind's mb-6 */
+}
+
+.alumni-quote {
+    font-style: italic;
+    color: #4b5563; /* Equivalent to Tailwind's text-gray-600 */
+    line-height: 1.6; /* Equivalent to Tailwind's leading-relaxed */
+}
+
+/* Chat Toggle Button */
+.chat-toggle-button {
+    position: fixed;
+    bottom: 2rem; /* Equivalent to Tailwind's bottom-8 */
+    right: 2rem; /* Equivalent to Tailwind's right-8 */
+    background-color: #2563eb; /* Equivalent to Tailwind's bg-blue-600 */
+    color: white; /* Equivalent to Tailwind's text-white */
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Equivalent to Tailwind's w-16 */
+    height: 60px; /* Equivalent to Tailwind's h-16 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Equivalent to Tailwind's text-3xl */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Equivalent to Tailwind's shadow-xl */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 50; /* Higher than other content */
+}
+
+.chat-toggle-button:hover {
+    background-color: #1d4ed8; /* Equivalent to Tailwind's hover:bg-blue-700 */
+    transform: scale(1.1); /* Equivalent to Tailwind's hover:scale-110 */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Larger shadow on hover */
+}
+
+.chat-toggle-button .icon {
+    width: 1.75rem; /* Equivalent to Tailwind's size={28} */
+    height: 1.75rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #1f2937; /* Equivalent to Tailwind's bg-gray-900 */
+    color: white; /* Equivalent to Tailwind's text-white */
+    padding: 1.5rem 2rem; /* Equivalent to Tailwind's py-6 px-8 */
+    text-align: center;
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+}
+
+.footer-links {
+    margin-top: 1rem; /* Equivalent to Tailwind's mt-4 */
+}
+
+.footer-link {
+    color: white; /* Equivalent to Tailwind's text-white */
+    text-decoration: none;
+    margin: 0 0.75rem; /* Equivalent to Tailwind's mx-3 */
+    cursor: pointer;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none; /* Hide nav links on small screens, sidebar will handle navigation */
+    }
+
+    .navbar-brand {
+        margin-right: 0; /* Remove auto margin when nav links are hidden */
+        text-align: center;
+        flex-grow: 1; /* Allow brand to take available space */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller font for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Smaller font for mobile */
+    }
+
+    .about-features, .program-grid, .alumni-testimonials {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item, .program-card, .alumni-card {
+        flex-basis: 90%; /* Wider cards on small screens */
+    }
+}
+
